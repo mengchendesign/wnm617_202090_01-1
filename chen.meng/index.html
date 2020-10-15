@@ -42,6 +42,12 @@
             </div>
          </form>
       </div>
+
+      <div class="modal" id="signin-warning">
+         <div class="modal-toast top" data-deactivate="#signin-warning">
+            <div class="message">Failure</div>
+         </div>
+      </div>
    </section>
 
    <section data-role="page" id="signup-page">
@@ -53,6 +59,10 @@
             </div>
             <div class="form-control">
                <label for="signup-password" class="form-label">Password</label>
+               <input id="signup-password" type="password" class="form-input" data-role="none" placeholder="Type your password">
+            </div>
+            <div class="form-control">
+               <label for="signup-password" class="form-label">Confirm Password</label>
                <input id="signup-password" type="password" class="form-input" data-role="none" placeholder="Type your password">
             </div>
             <div class="form-control">
@@ -84,7 +94,7 @@
       </div>
       <footer data-role="footer">
          <ul>
-            <li><a href="#recent-page">Recent</a></li>
+            <li><a href="#recent-page">Map</a></li>
             <li><a href="#list-page">List</a></li>
             <li><a href="#user-profile-page">Profile</a></li>
          </ul>
@@ -103,53 +113,62 @@
       </header>
       <div data-role="main">
          <div class="overscroll">
-            <ul>
-               <!-- li*10>a[href=#animal-profile-page]>{Animal $} -->
-               <li><a href="#animal-profile-page">Dog 1</a></li>
-               <li><a href="#animal-profile-page">Dog 2</a></li>
-               <li><a href="#animal-profile-page">Dog 3</a></li>
-               <li><a href="#animal-profile-page">Dog 4</a></li>
-               <li><a href="#animal-profile-page">Dog 5</a></li>
-               <li><a href="#animal-profile-page">Dog 6</a></li>
-               <li><a href="#animal-profile-page">Dog 7</a></li>
-               <li><a href="#animal-profile-page">Dog 8</a></li>
-               <li><a href="#animal-profile-page">Dog 9</a></li>
-               <li><a href="#animal-profile-page">Dog 10</a></li>
-               <li><a href="#animal-profile-page">Dog 1</a></li>
-               <li><a href="#animal-profile-page">Dog 2</a></li>
-               <li><a href="#animal-profile-page">Dog 3</a></li>
-               <li><a href="#animal-profile-page">Dog 4</a></li>
-               <li><a href="#animal-profile-page">Dog 5</a></li>
-               <li><a href="#animal-profile-page">Dog 6</a></li>
-               <li><a href="#animal-profile-page">Dog 7</a></li>
-               <li><a href="#animal-profile-page">Dog 8</a></li>
-               <li><a href="#animal-profile-page">Dog 9</a></li>
-               <li><a href="#animal-profile-page">Dog 10</a></li>              <li><a href="#animal-profile-page">Dog 1</a></li>
-               <li><a href="#animal-profile-page">Dog 2</a></li>
-               <li><a href="#animal-profile-page">Dog 3</a></li>
-               <li><a href="#animal-profile-page">Dog 4</a></li>
-               <li><a href="#animal-profile-page">Dog 5</a></li>
-               <li><a href="#animal-profile-page">Dog 6</a></li>
-               <li><a href="#animal-profile-page">Dog 7</a></li>
-               <li><a href="#animal-profile-page">Dog 8</a></li>
-               <li><a href="#animal-profile-page">Dog 9</a></li>
-               <li><a href="#animal-profile-page">Dog 10</a></li>
-               <li><a href="#animal-profile-page">Dog 1</a></li>
-               <li><a href="#animal-profile-page">Dog 2</a></li>
-               <li><a href="#animal-profile-page">Dog 3</a></li>
-               <li><a href="#animal-profile-page">Dog 4</a></li>
-               <li><a href="#animal-profile-page">Dog 5</a></li>
-               <li><a href="#animal-profile-page">Dog 6</a></li>
-               <li><a href="#animal-profile-page">Dog 7</a></li>
-               <li><a href="#animal-profile-page">Dog 8</a></li>
-               <li><a href="#animal-profile-page">Dog 9</a></li>
-               <li><a href="#animal-profile-page">Dog 10</a></li>
-            </ul>
+            <div class="animallist">
+               <div class="animallist-item">
+                  <div class="animallist-icon">
+                     <img src="img/husky.png" alt="">
+                  </div>
+                  <div class="animallist-description">
+                     <div class="animallist-name">Onion</div>
+                     <div class="animallist-type"><strong>Type</strong> Husky</div>
+                     <div class="animallist-breed"><strong>Breed</strong> Sled dog</div>
+                     <div class="animallist-age"><strong>Age</strong> 1</div>
+                     <div class="animallist-mood"><strong>Mood</strong> Great</div>
+                  </div>
+               </div>
+               <div class="animallist-item">
+                  <div class="animallist-icon">
+                     <img src="img/chihuahua.png" alt="">
+                  </div>
+                  <div class="animallist-description">
+                     <div class="animallist-name">Sushi</div>
+                     <div class="animallist-type"><strong>Type</strong>Chihuahua</div>
+                     <div class="animallist-breed"><strong>Breed</strong> Smallest breed of dog</div>
+                     <div class="animallist-age"><strong>Age</strong> 2</div>
+                     <div class="animallist-mood"><strong>Mood</strong> Excited</div>
+                  </div>
+               </div>
+               <div class="animallist-item">
+                  <div class="animallist-icon">
+                     <img src="img/cocker spaniel.png" alt="">
+                  </div>
+                  <div class="animallist-description">
+                     <div class="animallist-name">Waffles</div>
+                     <div class="animallist-type"><strong>Type</strong> Cocker Spaniel</div>
+                     <div class="animallist-breed"><strong>Breed</strong> 
+                     Hunting dog</div>
+                     <div class="animallist-age"><strong>Age</strong> 4</div>
+                     <div class="animallist-mood"><strong>Mood</strong> Good</div>
+                  </div>
+               </div>
+               <div class="animallist-item">
+                  <div class="animallist-icon">
+                     <img src="img/schnauzer.png" alt="">
+                  </div>
+                  <div class="animallist-description">
+                     <div class="animallist-name">Luke</div>
+                     <div class="animallist-type"><strong>Type</strong> Schnauzer</div>
+                     <div class="animallist-breed"><strong>Breed</strong> Guard dog</div>
+                     <div class="animallist-age"><strong>Age</strong> 1</div>
+                     <div class="animallist-mood"><strong>Mood</strong> Happy</div>
+                  </div>
+               </div>
+            </div>
          </div>
       </div>
       <footer data-role="footer">
          <ul>
-            <li><a href="#recent-page">Recent</a></li>
+            <li><a href="#recent-page">Map</a></li>
             <li><a href="#list-page">List</a></li>
             <li><a href="#user-profile-page">Profile</a></li>
          </ul>
@@ -173,6 +192,14 @@
                   <label for="list-add-breed" class="form-label">Dog Breed</label>
                   <input id="list-add-breed" type="text" class="form-input" data-role="none">
                </div>
+               <div class="form-control">
+                  <label for="list-add-breed" class="form-label">Dog Age</label>
+                  <input id="list-add-breed" type="text" class="form-input" data-role="none">
+               </div>
+               <div class="form-control">
+                  <label for="list-add-breed" class="form-label">Dog Mood</label>
+                  <input id="list-add-breed" type="text" class="form-input" data-role="none">
+               </div>
             </div>
             <div class="modal-foot">
                <input type="submit" value="Save" data-role="none" class="form-button">
@@ -183,17 +210,96 @@
 
    <section data-role="page" id="user-profile-page">
       <div data-role="main">
-         User Profile<br>
-         <a href="#" class="js-logout">Logout</a>
+         <div class="user-profile-image">
+            <img src="img/IMG_6793.JPG" alt="">
+         </div>
+         <div class="user-form">
+         <h2>Meng Chen</h2>
+         <h3>@mengchen</h3>
+         <div class="user-button">
+         <div><a href="#user-settings-page">Settings</a></div>
+      </div>
+      </div>   
       </div>
       <footer data-role="footer">
          <ul>
-            <li><a href="#recent-page">Recent</a></li>
+            <li><a href="#recent-page">Map</a></li>
             <li><a href="#list-page">List</a></li>
             <li><a href="#user-profile-page">Profile</a></li>
          </ul>
       </footer>
    </section>
+
+   <section data-role="page" id="user-settings-page">
+      <header data-role="header">
+         <h1>User Settings</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         <ul class="settings-list">
+            <li><a href="#user-profile-edit-page">Update Profile</a></li>
+            <li><a href="#user-password-edit-page">Change Password</a></li>
+            <li><a href="#" class="js-logout">Logout</a></li>
+         </ul>
+      </div>
+   </section>
+
+   <section data-role="page" id="user-profile-edit-page">
+      <header data-role="header">
+         <h1>User Info</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" data-rel="back">Save</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         <form id="user-edit-form" data-ajax="false" style="padding:1em">
+            <div class="form-control">
+               <label for="user-edit-username" class="form-label">Username</label>
+               <input id="user-edit-username" type="text" class="form-input" data-role="none" placeholder="Type your user name" value="mengchen">
+            </div>
+            <div class="form-control">
+               <label for="user-edit-name" class="form-label">Full Name</label>
+               <input id="user-edit-name" type="text" class="form-input" data-role="none" placeholder="Type your full name" value="Meng Chen">
+            </div>
+            <div class="form-control">
+               <label for="user-edit-email" class="form-label">Email</label>
+               <input id="user-edit-email" type="text" class="form-input" data-role="none" placeholder="Type your user email" value="mchen49@art.edu">
+            </div>
+         </form>
+      </div>
+   </section>
+
+   <section data-role="page" id="user-password-edit-page">
+      <header data-role="header">
+         <h1>Change Password</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" data-rel="back">Save</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         <form id="user-password-form" data-ajax="false" style="padding:1em">
+            <div class="form-control">
+               <label for="user-password-oldpassword" class="form-label">Old Password</label>
+               <input id="user-password-oldpassword" type="password" class="form-input" data-role="none" placeholder="Type your old password">
+            </div>
+            <div class="form-control">
+               <label for="user-password-password" class="form-label">New Password</label>
+               <input id="user-password-password" type="password" class="form-input" data-role="none" placeholder="Type your new password">
+            </div>
+            <div class="form-control">
+               <label for="user-password-confirm" class="form-label">Confirm Password</label>
+               <input id="user-password-confirm" type="password" class="form-input" data-role="none" placeholder="Type your new password">
+            </div>
+         </form>
+      </div>
+   </section>
+
 
    <section data-role="page" id="animal-profile-page">
       <header data-role="header">
