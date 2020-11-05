@@ -11,8 +11,11 @@
    <link rel="stylesheet" href="css/app.css">
 
    <script src="lib/js/jquery-2.2.4.min.js"></script>
-   <script src="js/app.js"></script>
+   <script src="js/functions.js"></script>
+   <script src="js/pages.js"></script>
+   <script src="js/parts.js"></script>
    <script src="js/signin.js"></script>
+   <script src="js/app.js"></script>
 
    <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
 
@@ -114,63 +117,10 @@
       </header>
       <div data-role="main">
          <div class="overscroll">
-            <div class="animallist">
-             <a href="#page-detail1">
-               <div class="animallist-item">
-                  <div class="animallist-icon">
-                     <img src="img/husky.png" alt="">
-                  </div>
-                  <div class="animallist-description">
-                     <div class="animallist-name">Onion</div>
-                     <div class="animallist-type"><strong>Type:</strong> Dog</div>
-                     <div class="animallist-breed"><strong>Breed:</strong> Husky</div>
-                     <div class="animallist-age"><strong>Age:</strong> 1</div>
-                     <div class="animallist-mood"><strong>Mood:</strong> Great</div>
-                  </div>
-               </div></a>
-               <a href="#page-detail2">
-               <div class="animallist-item">
-                  <div class="animallist-icon">
-                     <img src="img/chihuahua.png" alt="">
-                  </div>
-                  <div class="animallist-description">
-                     <div class="animallist-name">Sushi</div>
-                     <div class="animallist-type"><strong>Type:</strong>Dog</div>
-                     <div class="animallist-breed"><strong>Breed:</strong> Chihuahua</div>
-                     <div class="animallist-age"><strong>Age:</strong> 2</div>
-                     <div class="animallist-mood"><strong>Mood:</strong> Excited</div>
-                  </div>
-               </div></a>
-               <a href="#page-detail3">
-               <div class="animallist-item">
-                  <div class="animallist-icon">
-                     <img src="img/cocker spaniel.png" alt="">
-                  </div>
-                  <div class="animallist-description">
-                     <div class="animallist-name">Waffles</div>
-                     <div class="animallist-type"><strong>Type:</strong> Dog</div>
-                     <div class="animallist-breed"><strong>Breed:</strong> 
-                     Cocker Spaniel</div>
-                     <div class="animallist-age"><strong>Age:</strong> 4</div>
-                     <div class="animallist-mood"><strong>Mood:</strong> Good</div>
-                  </div>
-               </div></a>
-               <a href="#page-detail4">
-               <div class="animallist-item">
-                  <div class="animallist-icon">
-                     <img src="img/schnauzer.png" alt="">
-                  </div>
-                  <div class="animallist-description">
-                     <div class="animallist-name">Luke</div>
-                     <div class="animallist-type"><strong>Type:</strong> Dog</div>
-                     <div class="animallist-breed"><strong>Breed:</strong> Schnauzer</div>
-                     <div class="animallist-age"><strong>Age:</strong> 1</div>
-                     <div class="animallist-mood"><strong>Mood:</strong> Happy</div>
-                  </div>
-               </div></a>
-            </div>
+            <div class="animallist"></div>
          </div>
       </div>
+               
       <footer data-role="footer">
          <ul>
             <li><a href="#recent-page"><i class="material-icons" style="font-size:30px">map</i></a></li>
@@ -213,125 +163,10 @@
       </div>
    </section>
 
-   <section data-role="page" id="page-detail1">
-      <header data-role="header">
-         <h1>Detail</h1>
-         <ul class="nav flex-parent">
-            <li class="flex-child"></li>
-            <li class="flex-none">
-               <a href="#list-page"><i class="material-icons" style="font-size:30px">highlight_off</i></a>
-            </li>
-         </ul>
-      </header>
-      <div data-role="main">
-      <div class="container">
-          <img src="img/husky.png" alt="" style="width:120px">
-          <p><span>Onion</span></p>
-          <p>Type: Dog</p>
-          <p>Breed: Husky</p>
-          <p>Age: 1</p>
-          <p>Mood: Great</p>
-          <p>Location: 50 Stow Lake Dr E, San Francisco </p>
-          <p>Tuesday September 09, 2020 </p>
-          <p>10:00 am</p>
-          <img src="img/detail1.png" alt="" style="width:230px">
-        </div>
-      </div>
-   </section>
-
-
-   <section data-role="page" id="page-detail2">
-      <header data-role="header">
-         <h1>Detail</h1>
-         <ul class="nav flex-parent">
-            <li class="flex-child"></li>
-            <li class="flex-none">
-               <a href="#list-page"><i class="material-icons" style="font-size:30px">highlight_off</i></a>
-            </li>
-         </ul>
-      </header>
-      <div data-role="main">
-      <div class="container">
-          <img src="img/chihuahua.png" alt="" style="width:120px">
-          <p><span>Sushi</span></p>
-          <p>Type: Dog</p>
-          <p>Breed: Chihuahua</p>
-          <p>Age: 2</p>
-          <p>Mood: Excited</p>
-          <p>Location: 50 Stow Lake Dr E, San Francisco </p>
-          <p>Tuesday June 10, 2020 </p>
-          <p>01:00 pm</p>
-          <img src="img/detail1.png" alt="" style="width:230px">
-        </div>
-      </div>
-   </section>
-
-
-   <section data-role="page" id="page-detail3">
-      <header data-role="header">
-         <h1>Detail</h1>
-         <ul class="nav flex-parent">
-            <li class="flex-child"></li>
-            <li class="flex-none">
-               <a href="#list-page"><i class="material-icons" style="font-size:30px">highlight_off</i></a>
-            </li>
-         </ul>
-      </header>
-      <div data-role="main">
-      <div class="container">
-          <img src="img/cocker spaniel.png" alt="" style="width:120px">
-          <p><span>Waffles</span></p>
-          <p>Type: Dog</p>
-          <p>Breed: Cocker Spaniel</p>
-          <p>Age: 4</p>
-          <p>Mood: Good</p>
-          <p>Location: 50 Stow Lake Dr E, San Francisco </p>
-          <p>Tuesday October 09, 2020 </p>
-          <p>06:00 pm</p>
-          <img src="img/detail1.png" alt="" style="width:230px">
-        </div>
-      </div>
-   </section>
-
-
-   <section data-role="page" id="page-detail4">
-      <header data-role="header">
-         <h1>Detail</h1>
-         <ul class="nav flex-parent">
-            <li class="flex-child"></li>
-            <li class="flex-none">
-               <a href="#list-page"><i class="material-icons" style="font-size:30px">highlight_off</i></a>
-            </li>
-         </ul>
-      </header>
-      <div data-role="main">
-      <div class="container">
-          <img src="img/schnauzer.png" alt="" style="width:120px">
-          <p><span>Luke</span></p>
-          <p>Type: Dog</p>
-          <p>Breed: Schnauzer</p>
-          <p>Age: 1</p>
-          <p>Mood: Haapy</p>
-          <p>Location: 50 Stow Lake Dr E, San Francisco </p>
-          <p>Tuesday September 29, 2020 </p>
-          <p>70:00 am</p>
-          <img src="img/detail1.png" alt="" style="width:230px">
-        </div>
-      </div>
-   </section>
 
    <section data-role="page" id="user-profile-page">
       <div data-role="main">
-         <div class="user-profile-image">
-            <img src="img/IMG_6793.JPG" alt="">
-         </div>
-         <div class="user-form">
-         <h2>Meng Chen</h2>
-         <h3>@gmail</h3>
-         <div class="user-button">
-         <div><a href="#user-settings-page">Settings</a></div>
-      </div>
-      </div>   
+         <div class="profile"></div>
       </div>
       <footer data-role="footer">
          <ul>
