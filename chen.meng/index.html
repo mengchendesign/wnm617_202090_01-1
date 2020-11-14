@@ -12,6 +12,7 @@
 
    <script src="lib/js/jquery-2.2.4.min.js"></script>
    <script src="js/functions.js"></script>
+   <script src="js/maps.js"></script>
    <script src="js/pages.js"></script>
    <script src="js/parts.js"></script>
    <script src="js/signin.js"></script>
@@ -19,6 +20,8 @@
 
    <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
 
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvhpFq4Pe36Mr4muqOnYoOMYmOemCr6BY" defer ></script>
+   
 </head>
 <body>
 
@@ -80,6 +83,8 @@
 
    <section data-role="page" id="recent-page">
       <div data-role="main">
+         <div class="map"></div>
+
          <div class="floater right bottom">
             <div class="btn-circle" data-toggle="#recent-drawer">&plus;</div>
          </div>
@@ -256,6 +261,12 @@
          </ul>
       </header>
       <div data-role="main">
+         <div class="profile-top">
+            <div class="map"></div>
+         </div>
+         <div class="profile-bottom">
+            <div class="profile"></div>
+         </div>
          
       </div>
    </section>
