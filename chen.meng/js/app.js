@@ -4,6 +4,8 @@
 $(()=>{
 
 
+
+
    checkUserId();
 
    // event delegation
@@ -12,7 +14,7 @@ $(()=>{
    .on("pagecontainerbeforeshow",function(e,ui) {
       // console.log(ui.toPage[0].id)
 
-      // Page Routing
+      // Page Routing 
       switch(ui.toPage[0].id) {
          case "recent-page": RecentPage(); break;
          case "list-page": ListPage(); break;
