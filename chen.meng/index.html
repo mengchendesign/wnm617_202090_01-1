@@ -29,7 +29,7 @@
    <section data-role="page" id="signin-page">
       <div data-role="main">
          <div class="flex-stretch display-flex flex-align-center flex-justify-center">
-            <img src="img/logo.png" style="width:35vw;" class="icon" alt="">
+            <img src="img/logo.png" style="width:35vw;height: auto;" class="icon" alt="">
          </div>
          <form id="signin-form" data-ajax="false" style="padding:1em">
             <div class="form-control">
@@ -64,15 +64,19 @@
                <input id="signup-username" type="text" class="form-input" data-role="none" placeholder="Type your user name">
             </div>
             <div class="form-control">
+               <label for="signup-email" class="form-label">Email</label>
+               <input id="signup-email" type="email" class="form-input" data-role="none" placeholder="Type your Email">
+            </div>
+            <div class="form-control">
                <label for="signup-password" class="form-label">Password</label>
-               <input id="signup-password" type="password" class="form-input" data-role="none" placeholder="Type your password">
+               <input id="signup-password" type="password" class="form-input" data-role="none" placeholder="Type a password">
             </div>
             <div class="form-control">
-               <label for="signup-password" class="form-label">Confirm Password</label>
-               <input id="signup-password" type="password" class="form-input" data-role="none" placeholder="Type your password">
+               <label for="signup-password2" class="form-label">Confirm Password</label>
+               <input id="signup-password2" type="password" class="form-input" data-role="none" placeholder="Confirm password">
             </div>
             <div class="form-control">
-               <a href="#list-page" class="form-button">Sign Up</a>
+                <button type="submit" class="form-button" data-role="none">Sign Up</button>
             </div>
             <div class="form-control" style="text-align:center;font-size:0.8em">
                Already have an account? <a href="#signin-page">Sign In</a>!
@@ -85,14 +89,14 @@
       <div data-role="main">
          <div class="map"></div>
 
-         <div class="floater right bottom">
-            <div class="btn-circle" data-toggle="#recent-drawer">&plus;</div>
-         </div>
 
 
          <div class="modal" id="recent-drawer">
-            <!-- <div class="modal-back" data-deactivate="#recent-drawer"></div> -->
-            <div class="modal-drawer left">
+            <!-- <div class="modal-back" data-deactivate="#recent-drawer"></div> -->            
+            <div class="modal-drawer bottom">
+               <div class="modal-close-floater top right" data-deactivate="#recent-drawer">
+               <div class="btn-circle">&times;</div>
+               </div>
                <div class="modal-head">Title</div>
                <div class="modal-body">
                   Links and such
@@ -209,18 +213,6 @@
       </header>
       <div data-role="main">
          <form id="user-edit-form" data-ajax="false" style="padding:1em">
-            <div class="form-control">
-               <label for="user-edit-username" class="form-label">Username</label>
-               <input id="user-edit-username" type="text" class="form-input" data-role="none" placeholder="Type your user name" value="mengchen">
-            </div>
-            <div class="form-control">
-               <label for="user-edit-name" class="form-label">Full Name</label>
-               <input id="user-edit-name" type="text" class="form-input" data-role="none" placeholder="Type your full name" value="Meng Chen">
-            </div>
-            <div class="form-control">
-               <label for="user-edit-email" class="form-label">Email</label>
-               <input id="user-edit-email" type="text" class="form-input" data-role="none" placeholder="Type your user email" value="mengchen@gmail.com">
-            </div>
          </form>
       </div>
    </section>
@@ -257,7 +249,13 @@
       <header data-role="header">
          <h1>Dog Profile</h1>
          <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
+            <li><a href="#" data-rel="back">
+               <i class="material-icons" style="font-size:30px;  margin-top: 8px;">chevron_left</i>
+            </a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#animal-profile-edit-page">
+               <i class="material-icons"  data-activate="#edit-user-modal" style="font-size:24px">mode_edit</i>
+            </a></li>
          </ul>
       </header>
       <div data-role="main">
@@ -268,6 +266,22 @@
             <div class="profile"></div>
          </div>
          
+      </div>
+   </section>
+
+
+   <section data-role="page" id="animal-profile-edit-page">
+      <header data-role="header">
+         <h1>Dog Info</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" data-rel="back">Save</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         <form id="animal-edit-form" data-ajax="false" style="padding:1em">
+         </form>
       </div>
    </section>
 
