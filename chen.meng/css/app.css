@@ -88,41 +88,6 @@ a {
 .flex-justify-center { justify-content:center; }
 .flex-align-center { align-items:center; }
 
-.flex-parent { display:flex; }
-.flex-child { flex:1 1 auto; }
-
-.flex-justify-center { justify-content: center; }
-.flex-wrap { flex-wrap: wrap; }
-.flex-vertical { flex-direction: column;}
-
-[data-role='page'] {
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-}
-.ui-mobile .ui-page-active {
-  display:flex;
-  flex-direction:column;
-}
-
-[data-role='header'],
-[data-role='footer'] {
-  height:var(--header-height);
-  flex:none;
-  border-width:0;
-  position:relative;
-  z-index:2;
-  background-color:white;
-  box-shadow: 0 0 10px rgba(0,0,0,0.15);
-}
-[data-role='main'] {
-  flex:1 1 auto;
-  position:relative;
-  z-index:1;
-  overflow:auto;
-}
 
 
 
@@ -264,7 +229,14 @@ a {
 }
 
 
-
+.icon {
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: text-bottom;
+}
+.ui-header .icon {
+  vertical-align:middle;
+}
 
 
 
@@ -377,19 +349,6 @@ a {
    color: white;
    transition:all 0.3s;
 }
-.modal-toast.top {
-   top:1em;
-   transform:translate(-50%,-1em);
-}
-.modal-toast.bottom {
-   bottom:1em;
-   transform:translate(-50%,1em);
-}
-.modal.active .modal-toast {
-   transform: translate(-50%,0);
-   pointer-events:initial;
-}
-
 
 
 
@@ -414,6 +373,20 @@ a {
    border-radius:2em;
    box-shadow:2px 2px 5px rgba(0,0,0,0.15);
 }
+
+
+.modal-close-floater {
+    position: absolute;
+}
+.modal-close-floater.right {
+  right:1em;
+}
+.modal-close-floater.top {
+  top:-1em;
+  transform: translateY(-100%);
+}
+
+
 
 /* Profile */
 .user-profile-image img {
@@ -511,7 +484,7 @@ a {
     flex-direction: column;
 }
 .profile-top {
-    height: 300px;
+    height: 30vh;
     flex: none;
     overflow:auto;
     position:relative;
@@ -522,3 +495,27 @@ a {
     overflow:auto;
 }
 
+.animal-profile {
+  padding:1em;
+}
+.animal-profile-image img {
+  width:30vw;
+  height:30vw;
+  object-fit:cover;
+}
+
+
+
+
+#recent-drawer .modal-drawer {
+  margin:1em;
+  width:calc(100% - 2em);
+}
+.animal-popup img {
+  width:80px;
+}
+.animal-popup h2 {
+  margin:0;
+}
+.animal-popup-description {
+  padding:1em;
