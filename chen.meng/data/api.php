@@ -65,7 +65,7 @@ function makeStatement($data) {
 
 
       case "user_by_id":
-         return makeQuery($c,"SELECT * FROM `track_users` WHERE `id`=?",$p);
+         return makeQuery($c,"SELECT id,name,username,email,date_create,img FROM `track_users` WHERE `id`=?",$p);
       case "dog_by_id":
          return makeQuery($c,"SELECT * FROM `track_dogs` WHERE `id`=?",$p);
       case "location_by_id":
@@ -75,7 +75,7 @@ function makeStatement($data) {
       case "dogs_by_user_id":
          return makeQuery($c,"SELECT * FROM `track_dogs` WHERE `user_id`=?",$p);
       case "locations_by_dog_id":
-         return makeQuery($c,"SELECT * FROM `track_locations` WHERE `dog_id`=?",$p);
+         return makeQuery($c,"SELECT * FROM `track_locations` WHERE `animal_id`=?",$p);
 
 
       case "check_signin":
