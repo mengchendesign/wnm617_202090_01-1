@@ -343,7 +343,6 @@ a {
    background-color: #CF672A;
    border-radius: 0.2em;
    box-shadow: 1px 1px 5px rgba(0,0,0,0.15);
-   left: 50%;
    text-align: center;
    padding: 1em;
    color: white;
@@ -364,6 +363,7 @@ a {
 
 /* CIRCLE */
 .btn-circle {
+   display:inline-block;
    background-color:var(--color-white);
    width:3rem;
    height:3rem;
