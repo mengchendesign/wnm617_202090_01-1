@@ -16,12 +16,17 @@ $(()=>{
 
       // Page Routing 
       switch(ui.toPage[0].id) {
+
          case "recent-page": RecentPage(); break;
          case "list-page": ListPage(); break;
+
          case "user-profile-page": UserProfilePage(); break;
-         case "user-profile-edit-page": UserProfileEditPage(); break;
+         case "user-edit-page": UserEditPage(); break;
+
          case "animal-profile-page": AnimalProfilePage(); break;
-         case "animal-profile-edit-page": AnimalProfileEditPage(); break;
+         case "animal-edit-page": AnimalEditPage(); break;
+
+         case "location-add-page": LocationAddPage(); break;
       }
    })
 
@@ -34,7 +39,30 @@ $(()=>{
       checkSigninForm();
    })
 
+   .on("submit","#signup-form",function(e){
+      e.preventDefault();
+      checkSignupForm();
+   })
 
+
+
+
+
+
+// FORM SUBMIT CLICKS
+
+   .on("click",'.js-user-edit',function(e){
+      checkUserEditForm();
+   })
+   .on("click",'.js-animal-add',function(e){
+      checkAnimalAddForm();
+   })
+   .on("click",'.js-animal-edit',function(e){
+      checkAnimalEditForm();
+   })
+   .on("click",'.js-location-add',function(e){
+      checkLocationAddForm();
+   })
 
 
 
@@ -48,6 +76,10 @@ $(()=>{
    .on("click",'.js-animal-jump',function(e){
       sessionStorage.animalId = $(this).data("id");
       $.mobile.navigate('#animal-profile-page');
+   })
+
+   .on("click",'.js-animal-delete',function(e){
+      checkAnimalDelete($(this).data("id"));
    })
 
 

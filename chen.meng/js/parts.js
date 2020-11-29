@@ -8,8 +8,6 @@ const makeAnimalList = templater(o=>`
          <div class="animallist-name">${o.name}</div>
          <div class="animallist-type"><strong>Type</strong> ${o.type}</div>
          <div class="animallist-breed"><strong>Breed</strong> ${o.breed}</div>
-         <div class="animallist-age"><strong>Age</strong> ${o.age}</div>
-         <div class="animallist-mood"><strong>Mood</strong> ${o.mood}</div>
       </div>
    </div>
    `);
@@ -18,12 +16,11 @@ const makeUserProfile = templater(o=>`
    <div class="user-profile-image">
       <img src="${o.img}" alt="">
    </div>
-   <div class="user-form">
-   <h2>${o.name}</h2>
-   <h3>@${o.username}</h3>
-   <div class="user-button">
-   <div><a href="#user-settings-page">Settings</a></div>
-   </div>
+   <div style="padding:1em">
+      <h2>${o.name}</h2>
+      <h3>@${o.username}</h3>
+      <h3>${o.email}</h3>
+      <div class="floater top right" style="font-size:1.25em"><a href="#user-settings-page">&equiv;</a></div>
    </div>
    `);
 
@@ -36,6 +33,7 @@ const makeAnimalProfile = templater(o=>`
    <div>Type ${o.type}</div>
    <div>Breed ${o.breed}</div>
    <div><p>${o.description}</p></div>
+   <div><a href="#" class="js-animal-delete" data-id="${o.id}">Delete</a></div></div>
 </div>`);
 
 
@@ -50,8 +48,6 @@ const makeAnimalPopup = o => `
       <h2>${o.name}</h2>
       <div>${o.type}</div>
       <div>${o.breed}</div>
-      <div>${o.age}</div>
-      <div>${o.mood}</div>
    </div>
    <div class="form-button js-animal-jump" data-id="${o.animal_id}" style="width:100%">Visit</div>
 </div>
@@ -68,7 +64,7 @@ const FormControl = ({namespace,name,displayname,type,placeholder,value}) => {
    </div>`;
 }
 
-const makeUserProfileUpdateForm = o => `
+const makeUserEditForm = o => `
 ${FormControl({
    namespace:'user-edit',
    name:'username',
@@ -98,7 +94,7 @@ ${FormControl({
 
 
 
-const makeAnimalProfileUpdateForm = o => `
+const makeAnimalEditForm = o => `
 <!--<div class="user-profile-image">
    <img src="${o.img}">
 </div>-->
@@ -107,7 +103,7 @@ ${FormControl({
    name:'name',
    displayname:'Name',
    type:'text',
-   placeholder:'Type the animal name',
+   placeholder:'Type the dog name',
    value:o.name
 })}
 ${FormControl({
@@ -126,6 +122,7 @@ ${FormControl({
    placeholder:'Type the breed',
    value:o.breed
 })}
+
 <div class="form-control">
    <label for="animal-edit-description" class="form-label">Description</label>
    <textarea id="animal-edit-description" class="form-input" data-role="none" placeholder="Type a description" style="height:6em">${o.description}</textarea>

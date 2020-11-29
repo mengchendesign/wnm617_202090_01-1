@@ -51,6 +51,10 @@ const checkUserId = () => {
    } else {
       // logged in
       if(p.some(o=>window.location.hash===o))
-         $.mobile.navigate("#recent-page");
+         query({type:'dogs_by_user_id',params:[sessionStorage.userId]})
+         .then(d=>{
+            if(d.result.length) $.mobile.navigate("#recent-page");
+            else $.mobile.navigate("#list-page");
+         })
+      }
    }
-}

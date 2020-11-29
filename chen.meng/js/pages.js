@@ -5,7 +5,11 @@ const ListPage = async() => {
 
    console.log(d);
 
-   $("#list-page .animallist").html(makeAnimalList(d.result))
+   $("#list-page .animallist").html(
+      d.result.length ?
+         makeAnimalList(d.result) :
+         "You need to add some dogs."
+   )
 }
 
 
@@ -59,7 +63,6 @@ const RecentPage = async() => {
 
 
 
-
 const UserProfilePage = async() => {
    let d = await query({type:'user_by_id',params:[sessionStorage.userId]});
 
@@ -69,13 +72,13 @@ const UserProfilePage = async() => {
       .html(makeUserProfile(d.result))
 }
 
-const UserProfileEditPage = async() => {
+const UserEditPage = async() => {
    let d = await query({type:'user_by_id',params:[sessionStorage.userId]});
 
    console.log(d);
 
    $("#user-edit-form")
-      .html(makeUserProfileUpdateForm(d.result[0]))
+      .html(makeUserEditForm(d.result[0]))
 }
 
 
@@ -102,11 +105,33 @@ const AnimalProfilePage = async() => {
    
 }
 
-const AnimalProfileEditPage = async() => {
+const AnimalEditPage = async() => {
    let d = await query({type:'dog_by_id',params:[sessionStorage.animalId]});
 
    console.log(d);
 
    $("#animal-edit-form")
       .html(makeAnimalProfileUpdateForm(d.result[0]))
+}
+
+
+
+const LocationAddPage = async() => {
+   let map_el = await makeMap("#location-add-page .map");
+   makeMarkers(map_el,[]);
+
+   let map = map_el.data('map');
+
+   map.addListener("click",function(e){
+      console.log(e)
+      let posFromClick = {lat:e.latLng.lat(),lng:e.latLng.lng()};
+      let posFromCenter = {lat:map.getCenter().lat(),lng:map.getCenter().lng()};
+      console.log(posFromClick,posFromCenter)
+      $("#location-add-lat").val(posFromClick.lat)
+      $("#location-add-lng").val(posFromClick.lng)
+
+      makeMarkers(map_el,[posFromClick],false);
+   });
+
+
 }
