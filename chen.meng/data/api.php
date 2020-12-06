@@ -49,6 +49,33 @@ function makeQuery($c,$ps,$p,$makeResults=true) {
 
 
 
+
+
+
+
+
+function makeUpload($file,$folder) {
+   $filename = microtime(true) . "_" . $_FILES[$file]['name'];
+
+   if(@move_uploaded_file(
+      $_FILES[$file]['tmp_name'],
+      $folder.$filename
+   )) return ['result'=>$filename];
+   else return [
+      "error"=>"File Upload Failed",
+      "_FILES"=>$_FILES,
+      "filename"=>$filename
+   ];
+}
+
+
+
+
+
+
+
+
+
 function makeStatement($data) {
    $c = makeConn();
    $t = $data->type;
@@ -93,6 +120,26 @@ function makeStatement($data) {
             WHERE a.user_id=?
             GROUP BY l.animal_id
             ",$p);
+
+
+
+
+      /* ----- SEARCH ------ */
+      case "search_dogs":
+         $p = ["%$p[0]%",$p[1]];
+         return makeQuery($c,"SELECT * FROM
+            `track_dogs`
+            WHERE
+               `name` LIKE ? AND
+               `user_id` = ?
+            ",$p);
+      case "filter_dogs":
+         return makeQuery($c,"SELECT * FROM
+            `track_dogs`
+            WHERE
+               `$p[0]` = ? AND
+               `user_id` = ?
+            ",[$p[1],$p[2]]);
 
 
 
@@ -163,6 +210,14 @@ function makeStatement($data) {
             WHERE `id` = ?
             ",$p,false);
          return ["result"=>"success"];
+      case "update_user_image":
+         $r = makeQuery($c,"UPDATE
+            `track_users`
+            SET
+            `img` = ?
+            WHERE `id` = ?
+            ",$p,false);
+         return ["result"=>"success"];
 
 
       // DELETE
@@ -180,6 +235,17 @@ function makeStatement($data) {
       default: return ["error"=>"No Matched Type"];
    }
 }
+
+
+
+
+
+if(!empty($_FILES)) {
+   $r = makeUpload("image","../uploads/");
+   die(json_encode($r));
+}
+
+
 
 
 
