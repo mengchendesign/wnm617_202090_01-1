@@ -3,11 +3,21 @@
 <html lang="en">
 <head>
    <meta charset="UTF-8">
+
+   <meta name="apple-mobile-web-app-capable" content="yes">
+   <meta name="mobile-web-app-capable" content="yes">
+
+   <link rel="apple-touch-icon" href="img/site_logo.png">
+   <link rel="icon" href="img/site_logo.png">
+
+
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Dogs Tracker</title>
-   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
+
+   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
    <link rel="stylesheet" href="lib/css/jquery.mobile.structure-1.4.5.min.css">
+
    <link rel="stylesheet" href="css/app.css">
 
    <script src="lib/js/jquery-2.2.4.min.js"></script>
@@ -86,6 +96,9 @@
       </div>
    </section>
 
+
+
+
    <section data-role="page" id="recent-page">
       <div data-role="main">
          <div class="map"></div>
@@ -116,19 +129,29 @@
 
    </section>
 
-   <section data-role="page" id="list-page">
-      <header data-role="header">
-         <h1>Dogs</h1>
-         <ul>
-            <li class="flex-stretch"></li>
-            <li><a href="#animal-add-page"><i class="material-icons" style="font-size:30px">add_circle_outline</i></a></li>
-         </ul>
 
+
+
+
+   <section data-role="page" id="list-page">
+      <header data-role="header" style="padding:0 1em">
+         <form class="hotdog" id="list-search-form" data-ajax="false">
+            <input type="search" id="list-search-input" data-role="none" placeholder="Search">
+         </form>
+      </header>
+      <header data-role="header">
+         <div class="filter-list">
+            <div class="filter" data-field="type" data-value="">All</div>
+            <!-- <div class="filter" data-field="type" data-value="cat">Cat</div>
+            <div class="filter" data-field="type" data-value="dog">Dog</div>
+            <div class="filter" data-field="type" data-value="horse">Horse</div> -->
+         </div>
       </header>
       <div data-role="main">
          <div class="overscroll">
             <div class="animallist"></div>
          </div>
+         <div class="floater right bottom"><a class="btn-circle" href="#animal-add-page">&plus;</a></div>
       </div>
                
       <footer data-role="footer">
@@ -189,6 +212,7 @@
       </div>
    </section>
 
+
    <section data-role="page" id="user-password-page">
       <header data-role="header">
          <h1>Change Password</h1>
@@ -215,6 +239,27 @@
                </div>
             </form>
          </div>
+      </div>
+   </section>
+
+
+   <section data-role="page" id="user-upload-page">
+      <header data-role="header">
+         <h1>Upload Photo</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" class="js-user-upload">Save</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         <form id="user-upload-form" data-ajax="false">
+            <input type="hidden" id="user-upload-image">
+            <label class="image-uploader full">
+               <input type="file" data-role="none" id="user-upload-input">
+            </label>
+         </form>
+         <label for="user-upload-input" class="form-button">Choose Image</label>
       </div>
    </section>
 
