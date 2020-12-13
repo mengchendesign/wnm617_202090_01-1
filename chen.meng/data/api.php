@@ -79,7 +79,7 @@ function makeUpload($file,$folder) {
 function makeStatement($data) {
    $c = makeConn();
    $t = $data->type;
-   $p = $data->params; 
+   $p = $data->params;
 
    switch($t) {
 
@@ -145,7 +145,7 @@ function makeStatement($data) {
 
 
 
-               /* ----- CRUD ------ */
+      /* ----- CRUD ------ */
 
       // INSERTS
       case "insert_user":
@@ -157,9 +157,9 @@ function makeStatement($data) {
          // Create new user
          $r = makeQuery($c,"INSERT INTO
             `track_users`
-            (`username`,`email`,`password`,`img`,`date_create`)
+            (`name`,`username`,`email`,`password`,`img`,`date_create`)
             VALUES
-            (?, ?, md5(?), 'https://via.placeholder.com/400?text=USER', NOW())
+            ('', ?, ?, md5(?), 'https://via.placeholder.com/400?text=USER', NOW())
             ",$p);
          return ["id"=>$c->lastInsertId()];
 
@@ -168,7 +168,7 @@ function makeStatement($data) {
             `track_dogs`
             (`user_id`,`name`,`type`,`breed`,`description`,`img`,`date_create`)
             VALUES
-            (?, ?, ?, ?, ?, 'https://placedog.net/400?', NOW())
+            (?, ?, ?, ?, ?, ?, NOW())
             ",$p);
          return ["id"=>$c->lastInsertId()];
 
@@ -198,6 +198,14 @@ function makeStatement($data) {
             WHERE `id` = ?
             ",$p,false);
          return ["result"=>"success"];
+      case "update_user_image":
+         $r = makeQuery($c,"UPDATE
+            `track_users`
+            SET
+            `img` = ?
+            WHERE `id` = ?
+            ",$p,false);
+         return ["result"=>"success"];
 
       case "update_animal":
          $r = makeQuery($c,"UPDATE
@@ -206,14 +214,7 @@ function makeStatement($data) {
             `name` = ?,
             `type` = ?,
             `breed` = ?,
-            `description` = ?
-            WHERE `id` = ?
-            ",$p,false);
-         return ["result"=>"success"];
-      case "update_user_image":
-         $r = makeQuery($c,"UPDATE
-            `track_users`
-            SET
+            `description` = ?,
             `img` = ?
             WHERE `id` = ?
             ",$p,false);
