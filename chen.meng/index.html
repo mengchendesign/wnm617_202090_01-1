@@ -4,6 +4,7 @@
 <head>
    <meta charset="UTF-8">
 
+
    <meta name="apple-mobile-web-app-capable" content="yes">
    <meta name="mobile-web-app-capable" content="yes">
 
@@ -14,11 +15,10 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Dogs Tracker</title>
 
-
    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
    <link rel="stylesheet" href="lib/css/jquery.mobile.structure-1.4.5.min.css">
-
    <link rel="stylesheet" href="css/app.css">
+
 
    <script src="lib/js/jquery-2.2.4.min.js"></script>
    <script src="js/functions.js"></script>
@@ -32,7 +32,7 @@
    <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
 
    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvhpFq4Pe36Mr4muqOnYoOMYmOemCr6BY" defer ></script>
-   
+
 </head>
 <body>
 
@@ -87,7 +87,7 @@
                <input id="signup-password-confirm" type="password" class="form-input" data-role="none" placeholder="Confirm password">
             </div>
             <div class="form-control">
-                <button type="submit" class="form-button" data-role="none">Sign Up</button>
+               <button type="submit" class="form-button" data-role="none">Sign Up</button>
             </div>
             <div class="form-control" style="text-align:center;font-size:0.8em">
                Already have an account? <a href="#signin-page">Sign In</a>!
@@ -99,17 +99,17 @@
 
 
 
-   <section data-role="page" id="recent-page">
+ <section data-role="page" id="recent-page">
       <div data-role="main">
          <div class="map"></div>
 
 
 
          <div class="modal" id="recent-drawer">
-            <!-- <div class="modal-back" data-deactivate="#recent-drawer"></div> -->            
+            <!-- <div class="modal-back" data-deactivate="#recent-drawer"></div> -->
             <div class="modal-drawer bottom">
                <div class="modal-close-floater top right" data-deactivate="#recent-drawer">
-               <div class="btn-circle">&times;</div>
+                  <div class="btn-circle">&times;</div>
                </div>
                <div class="modal-head">Title</div>
                <div class="modal-body">
@@ -133,7 +133,7 @@
 
 
 
-   <section data-role="page" id="list-page">
+ <section data-role="page" id="list-page">
       <header data-role="header" style="padding:0 1em">
          <form class="hotdog" id="list-search-form" data-ajax="false">
             <input type="search" id="list-search-input" data-role="none" placeholder="Search">
@@ -141,8 +141,8 @@
       </header>
       <header data-role="header">
          <div class="filter-list">
-            <div class="filter" data-field="type" data-value="">All</div>
-            <!-- <div class="filter" data-field="type" data-value="cat">Cat</div>
+            <!-- <div class="filter" data-field="type" data-value="">All</div>
+            <div class="filter" data-field="type" data-value="cat">Cat</div>
             <div class="filter" data-field="type" data-value="dog">Dog</div>
             <div class="filter" data-field="type" data-value="horse">Horse</div> -->
          </div>
@@ -153,7 +153,6 @@
          </div>
          <div class="floater right bottom"><a class="btn-circle" href="#animal-add-page">&plus;</a></div>
       </div>
-               
       <footer data-role="footer">
          <ul>
             <li><a href="#recent-page"><i class="material-icons" style="font-size:30px">map</i></a></li>
@@ -163,10 +162,11 @@
       </footer>
    </section>
 
-      
 
 
-   <section data-role="page" id="user-profile-page">
+
+
+ <section data-role="page" id="user-profile-page">
       <div data-role="main">
          <div class="profile"></div>
       </div>
@@ -223,7 +223,7 @@
          </ul>
       </header>
       <div data-role="main">
- <div class="overscroll">
+         <div class="overscroll">
             <form id="user-password-form" data-ajax="false" style="padding:1em">
                <div class="form-control">
                   <label for="user-password-oldpassword" class="form-label">Old Password</label>
@@ -266,7 +266,7 @@
 
    <section data-role="page" id="animal-profile-page">
       <header data-role="header">
-         <h1>Dog Profile</h1>
+         <h1>Dog  Profile</h1>
          <ul>
             <li><a href="#" data-rel="back">
                <i class="material-icons" style="font-size:30px;  margin-top: 8px;">chevron_left</i>
@@ -287,14 +287,13 @@
          <div class="profile-bottom">
             <div class="profile"></div>
          </div>
-         
       </div>
    </section>
 
 
    <section data-role="page" id="animal-edit-page">
       <header data-role="header">
-         <h1>Dog Info</h1>
+         <h1>Dog  Info</h1>
          <ul>
             <li><a href="#" data-rel="back">Back</a></li>
             <li class="flex-stretch"></li>
@@ -321,8 +320,13 @@
       <div data-role="main">
          <div class="overscroll">
             <form id="animal-add-form" data-ajax="false" style="padding:1em">
-
+            
                <input type="hidden" id="animal-add-destination" value="#list-page">
+
+               <input type="hidden" id="animal-add-image">
+               <label class="image-uploader thumbnail">
+                  <input type="file" data-role="none" id="animal-add-upload">
+               </label>
 
                <div class="form-control">
                   <label for="animal-add-name" class="form-label">Name</label>
@@ -388,17 +392,13 @@
                <div class="form-control animal-profile-image">
                   <img src="https://via.placeholder.com/400/?text=Upload" alt="">
                </div>
-
+            
                <div class="form-control">
                   <label for="location-add-description" class="form-label">Description</label>
                   <textarea id="location-add-description" class="form-input" data-role="none"></textarea>
                </div>
             </form>
          </div>
-      </div>
-   </section>
-
-
       </div>
    </section>
 
