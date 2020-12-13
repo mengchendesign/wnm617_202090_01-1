@@ -44,8 +44,8 @@ const RecentPage = async() => {
             .open(map_el.data("map"),o);
          map_el.data("infoWindow")
             .setContent(makeAnimalPopup(valid_dogs[i]));
-
          
+
          /*
          // ACTIVE EXAMPLE
          $("#recent-drawer").addClass("active");
@@ -121,7 +121,7 @@ const AnimalEditPage = async() => {
    console.log(d);
 
    $("#animal-edit-form")
-      .html(makeAnimalProfileUpdateForm(d.result[0]))
+      .html(makeAnimalEditForm(d.result[0]))
 }
 
 

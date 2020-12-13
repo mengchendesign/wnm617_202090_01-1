@@ -17,14 +17,15 @@ const makeUserProfile = templater(o=>`
       <img src="${o.img}" alt="">
       <a href="#user-upload-page" class="floater bottom right"><img class="icon" src="img/edit.png" alt=""></a></a>
    </div>
-   <div style="padding:1em">
+   <div class="user-form">
       <h2>${o.name}</h2>
       <h3>@${o.username}</h3>
       <h3>${o.email}</h3>
-      <div class="floater top right" style="font-size:1.25em"><a href="#user-settings-page">&equiv;</a></div>
+      <div class="user-button">
+         <div><a href="#user-settings-page">Settings</a></div>
+      </div>
    </div>
    `);
-
 
 const makeAnimalProfile = templater(o=>`
 <div class="animal-profile">
@@ -97,15 +98,16 @@ ${FormControl({
 
 
 const makeAnimalEditForm = o => `
-<!--<div class="user-profile-image">
-   <img src="${o.img}">
-</div>-->
+<input type="hidden" id="animal-edit-image" value="${o.img}">
+<label class="image-uploader thumbnail picked" style="background-image:url('${o.img}')">
+   <input type="file" data-role="none" id="animal-edit-input">
+</label>
 ${FormControl({
    namespace:'animal-edit',
    name:'name',
    displayname:'Name',
    type:'text',
-   placeholder:'Type the dog name',
+   placeholder:'Type the animal name',
    value:o.name
 })}
 ${FormControl({
@@ -134,7 +136,7 @@ ${FormControl({
 
 
 
-const drawAnimalList = (a,empty_phrase="No dogs yet, you should add some.") => {
+const drawAnimalList = (a,empty_phrase="No animals yet, you should add some.") => {
    $("#list-page .animallist").html(
       a.length ? makeAnimalList(a) : empty_phrase
    )
@@ -142,7 +144,7 @@ const drawAnimalList = (a,empty_phrase="No dogs yet, you should add some.") => {
 
 
 
-const capitalize = s => s[0].toUpperCase()+s.substr(1);
+const capitalize = s => s=='' ? '' : s[0].toUpperCase()+s.substr(1);
 
 const filterList = (animals,type) => {
    let a = [...(new Set(animals.map(o=>o[type])))];
@@ -163,9 +165,8 @@ const makeFilterList = (animals) => {
 
 
 
-const makeUploaderImage = ({namespace,folder,name}) => {
-   console.log(namespace,folder,name)
-   $(`#${namespace}-image`).val(folder+name);
-   $(`#${namespace}-page .image-uploader`)
-      .css({'background-image':`url(${folder+name}`})
+const makeUploaderImage = (el, name, folder='') => {
+
+   $(el).parent().css({'background-image':`url(${folder+name}`}).addClass('picked')
+      .prev().val(folder+name);
 }

@@ -14,7 +14,7 @@ $(()=>{
    .on("pagecontainerbeforeshow",function(e,ui) {
       // console.log(ui.toPage[0].id)
 
-      // Page Routing 
+      // Page Routing
       switch(ui.toPage[0].id) {
 
          case "recent-page": RecentPage(); break;
@@ -52,7 +52,7 @@ $(()=>{
 
 
 
-// FORM SUBMIT CLICKS
+   // FORM SUBMIT CLICKS
 
    .on("click",'.js-user-edit',function(e){
       checkUserEditForm();
@@ -80,11 +80,7 @@ $(()=>{
       checkUpload(this.files[0])
       .then(d=>{
          console.log(d)
-         makeUploaderImage({
-            namespace:'user-upload',
-            folder:'uploads/',
-            name:d.result
-         })
+         makeUploaderImage(this,d.result,'uploads/')
       })
    })
 
