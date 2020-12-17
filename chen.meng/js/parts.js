@@ -15,7 +15,7 @@ const makeAnimalList = templater(o=>`
 const makeUserProfile = templater(o=>`
    <div class="user-profile-image">
       <img src="${o.img}" alt="">
-      <a href="#user-upload-page" class="floater bottom right"><img class="icon" src="img/edit.png" alt=""></a></a>
+      <a href="#user-upload-page" class="floater bottom right"><img class="icon" src="img/edit.png" alt=""></a>
    </div>
    <div class="user-form">
       <h2>${o.name}</h2>
@@ -36,7 +36,9 @@ const makeAnimalProfile = templater(o=>`
    <div>Type ${o.type}</div>
    <div>Breed ${o.breed}</div>
    <div><p>${o.description}</p></div>
-   <div><a href="#" class="js-animal-delete" data-id="${o.id}">Delete</a></div></div>
+   <div class="delete-button">
+     <div><a href="#" class="js-animal-delete" data-id="${o.id} ">Delete</a></div>
+   </div>
 </div>`);
 
 
