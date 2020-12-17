@@ -13,7 +13,7 @@
 
 
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Dogs Tracker</title>
+   <title>Dog Tracker</title>
 
    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
    <link rel="stylesheet" href="lib/css/jquery.mobile.structure-1.4.5.min.css">
@@ -102,6 +102,7 @@
  <section data-role="page" id="recent-page">
       <div data-role="main">
          <div class="map"></div>
+         <div class="floater right bottom"><a class="btn-circle" href="#animal-add-page">&plus;</a></div>
 
 
 
@@ -134,7 +135,7 @@
 
 
  <section data-role="page" id="list-page">
-      <header data-role="header" style="padding:0 1em">
+      <header data-role="header" style="padding:4px;">
          <form class="hotdog" id="list-search-form" data-ajax="false">
             <input type="search" id="list-search-input" data-role="none" placeholder="Search">
          </form>
@@ -151,7 +152,7 @@
          <div class="overscroll">
             <div class="animallist"></div>
          </div>
-         <div class="floater right bottom"><a class="btn-circle" href="#animal-add-page">&plus;</a></div>
+      <div class="floater right bottom"><a class="btn-circle" href="#animal-add-page">&plus;</a></div>
       </div>
       <footer data-role="footer">
          <ul>
@@ -183,25 +184,27 @@
       <header data-role="header">
          <h1>User Settings</h1>
          <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
+            <li><a href="#" data-rel="back"><i class="material-icons" style="font-size:30px;">chevron_left</i></a></li>
          </ul>
       </header>
       <div data-role="main">
          <ul class="settings-list">
             <li><a href="#user-edit-page">Update Profile</a></li>
             <li><a href="#user-password-page">Change Password</a></li>
-            <li><a href="#" class="js-logout">Logout</a></li>
-         </ul>
       </div>
+      <div class="logout-button">
+           <a href="#" class="js-logout">Logout</a>
+      </div>
+      
    </section>
 
    <section data-role="page" id="user-edit-page">
       <header data-role="header">
          <h1>User Info</h1>
          <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
+            <li><a href="#" data-rel="back"><i class="material-icons" style="font-size:30px;">chevron_left</i></a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#" class="js-user-edit">Save</a></li>
+            <li><a href="#" class="js-user-edit"><i class="material-icons" style="font-size:30px;">check</i></a></li>
          </ul>
       </header>
       <div data-role="main">
@@ -217,9 +220,9 @@
       <header data-role="header">
          <h1>Change Password</h1>
          <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
+            <li><a href="#" data-rel="back"><i class="material-icons" style="font-size:30px;">chevron_left</i></a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#" data-rel="back">Save</a></li>
+            <li><a href="#" data-rel="back"><i class="material-icons" style="font-size:30px;">check</i></a></li>
          </ul>
       </header>
       <div data-role="main">
@@ -247,9 +250,9 @@
       <header data-role="header">
          <h1>Upload Photo</h1>
          <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
+            <li><a href="#" data-rel="back"><i class="material-icons" style="font-size:30px;">chevron_left</i></a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#" class="js-user-upload">Save</a></li>
+            <li><a href="#" class="js-user-upload"><i class="material-icons" style="font-size:30px;">check</i></a></li>
          </ul>
       </header>
       <div data-role="main">
@@ -269,7 +272,7 @@
          <h1>Dog  Profile</h1>
          <ul>
             <li><a href="#" data-rel="back">
-               <i class="material-icons" style="font-size:30px;  margin-top: 8px;">chevron_left</i>
+               <i class="material-icons" style="font-size:30px;">chevron_left</i>
             </a></li>
             <li class="flex-stretch"></li>
             <li><a href="#animal-edit-page">
@@ -295,9 +298,9 @@
       <header data-role="header">
          <h1>Dog  Info</h1>
          <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
+            <li><a href="#" data-rel="back"><i class="material-icons" style="font-size:30px;">chevron_left</i></a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#" class="js-animal-edit">Save</a></li>
+            <li><a href="#" class="js-animal-edit"><i class="material-icons" style="font-size:30px;">check</i></a></li>
          </ul>
       </header>
       <div data-role="main">
@@ -312,9 +315,9 @@
       <header data-role="header">
          <h1>Dog Info</h1>
          <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
+            <li><a href="#" data-rel="back"><i class="material-icons" style="font-size:30px;">chevron_left</i></a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#" class="js-animal-add">Save</a></li>
+            <li><a href="#" class="js-animal-add"><i class="material-icons" style="font-size:30px; ">check</i></a></li>
          </ul>
       </header>
       <div data-role="main">
@@ -364,7 +367,7 @@
       <header data-role="header">
          <h1>Choose Location</h1>
          <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
+            <li><a href="#" data-rel="back"><i class="material-icons" style="font-size:30px;">chevron_left</i></a></li>
             <li class="flex-stretch"></li>
             <li><a href="#location-description-page">Next</a></li>
          </ul>
@@ -380,9 +383,9 @@
       <header data-role="header">
          <h1>Describe the Dog</h1>
          <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
+            <li><a href="#" data-rel="back"><i class="material-icons" style="font-size:30px;">chevron_left</i></a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#" class="js-location-add">Save</a></li>
+            <li><a href="#" class="js-location-add"><i class="material-icons" style="font-size:30px;">check</i></a></li>
          </ul>
       </header>
       <div data-role="main">
