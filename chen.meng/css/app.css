@@ -101,7 +101,7 @@ a {
 .ui-mobile label.form-label {
     margin: 0 1em 0.5em;
     font-size: 0.8em;
-    color: var(--color-neutral-mediumer);
+    color: #5c5c5b;
 }
 .form-input {
     width: 100%;
